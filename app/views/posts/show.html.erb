@@ -11,8 +11,34 @@
 
         <% if @post.user == current_user %>
           <%= link_to 'Edit', edit_post_path(@post), class: 'standard-link' %>
+          <br>
+          <%= link_to 'Remover', @post, method: :delete,
+              data: { confirm: 'Are you sure?' }, class: 'delete-post-link' %>
         <% end %>
       </div>
     </div>
+  </div>
+
+  <div class="row">
+    <section class="comments py-4" data-post-id="<%= @post.id %>">
+      <% if @post.comments.any? %>
+        <%= render @post.comments.order(created_at: :desc) %>
+      <% else %>
+        Nenhum comentário a ser mostrado
+      <% end %>
+
+      <%= form_with model: @comment, local: true, class: 'new-comment' do |form| %>
+        <%= form.hidden_field :post_id, value: @post.id %>
+
+        <div class="form-group py-2">
+          <%= form.text_area :body, placeholder: 'Comentário', required: true, class: 'form-control' %>
+        </div>
+
+        <div class="actions py-2">
+          <%= form.submit 'Enviar comentário', class: 'btn btn-success' %>
+        </div>
+      <% end %>
+    
+    </section>
   </div>
 </div>
