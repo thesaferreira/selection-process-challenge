@@ -1,1 +1,57 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background: rgb(73,172,117);
+    background: linear-gradient(90deg, rgba(73,172,117,1) 0%, rgba(87,142,185,1) 100%);
+    font-family: 'Inter', sans-serif;
+}
+
+.page-link {
+    color: #49ac75;
+}
+
+.page-item.active .page-link {
+    background-color: #49ac75;
+    border-color: #49ac75;
+}
+
+.blog-navbar {
+    background-color: rgba(255,255,255, .8) !important;
+}
+
+.active {
+    .nav-link {
+        color: #4D4D4D !important;
+    }
+}
+
+.posts {
+    max-width: 600px;
+}
+
+.post-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #2c2c2c;
+    a {
+        text-decoration: none; 
+    }
+    
+}
+
+.post-title {
+    cursor: pointer;
+    color: #181818;
+    font-size: 1.2em;
+    &:hover {
+        color: lighten(black, 40%);
+    }
+}
+
+.edit-post-link {
+    color: #2c2c2c;
+}
+
+.delete-post-link {
+    color: rgb(226, 59, 59);
+}
