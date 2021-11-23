@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+
+<p>
+  <em>Por: <%= @post.user.name %> </em>
+</p>
+
+<% if @post.user == current_user %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
+
+<%= link_to 'Back', posts_path %>
