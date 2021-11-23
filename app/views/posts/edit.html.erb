@@ -1,6 +1,12 @@
-<h1>Editing Post</h1>
+<div class="container">
+    <div class="row mt-4">
+        <h1 class="post-main-title">Editar post</h1>
+    </div>
+    <div class="row">
+        <%= render 'form', post: @post %>
+    </div>
+    <div class="row mt-2">
+        <%= link_to 'Visualizar', @post, class: 'standard-link' %>
+    </div>
+</div>
 
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>

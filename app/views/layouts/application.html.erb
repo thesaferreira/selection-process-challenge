@@ -31,6 +31,10 @@
               </li>
 
               <% if user_signed_in? %>
+                <li class="nav-item <%= active_class(new_post_path) %>">
+                  <%= link_to "Criar novo post", new_post_path, class: "nav-link" %>
+                </li>
+
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">

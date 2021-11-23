@@ -12,7 +12,7 @@
             <p><small>Por: <%= post.user.name %></small></p>
 
             <% if post.user == current_user %>
-              <%= link_to 'Editar', edit_post_path(post), class: 'edit-post-link' %>
+              <%= link_to 'Editar', edit_post_path(post), class: 'standard-link' %>
               <br>
               <%= link_to 'Remover', post, method: :delete,
               data: { confirm: 'Are you sure?' }, class: 'delete-post-link' %>
@@ -27,11 +27,3 @@
     
   </div>
 </div>
-
-
-
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Post', new_post_path %>
-<% end %>

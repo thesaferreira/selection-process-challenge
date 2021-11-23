@@ -7,6 +7,10 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+a {
+    text-decoration: none; 
+}
+
 .page-link {
     color: #49ac75;
 }
@@ -33,10 +37,6 @@ body {
 .post-container {
     background-color: rgba(255, 255, 255, 0.8);
     color: #2c2c2c;
-    a {
-        text-decoration: none; 
-    }
-    
 }
 
 .post-title {
@@ -48,7 +48,12 @@ body {
     }
 }
 
-.edit-post-link {
+.post-main-title {
+    color: #181818;
+    font-size: 1.8em;
+}
+
+.standard-link {
     color: #2c2c2c;
 }
 
