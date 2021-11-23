@@ -31,6 +31,8 @@
   </tbody>
 </table>
 
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+
 <br>
 
 <% if user_signed_in? %>
