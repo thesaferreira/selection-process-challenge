@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      user: 'Usuário'
+    attributes:
+      default: &default
+        created_at: 'Criado em'
+        updated_at : 'Atualizado em' 
+      post:
+        <<: *default
+        title: 'Título'
+        body: 'Corpo'
+      user:
+        <<: *default
+        name: 'Nome'

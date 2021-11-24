@@ -37,3 +37,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.8"
 
 gem "pagy", "~> 5.5"
+
+gem "rails-i18n", "~> 6.0"
+
+gem "devise-i18n", "~> 1.10"
