@@ -1,24 +1,4 @@
-# README
+![example workflow](https://github.com/thesaferreira/selection-process-challenge/actions/workflows/ci.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/thesaferreira/selection-process-challenge/badge.svg?branch=main)](https://coveralls.io/github/thesaferreira/selection-process-challenge?branch=main)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A Rails application that consists of a blog, following the specified requirements given as a selection process step.
