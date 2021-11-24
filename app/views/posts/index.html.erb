@@ -7,7 +7,13 @@
             <h2 class="post-title" onclick="location.href='<%= post_path(post) %>'">
               <%= post.title %>
             </h2>
-            <p><%= post.body.first(20) %>...</p>
+            <p><%= post.body.first(50) %>...</p>
+
+            <% if post.tags.exists? %>
+                <small> tags: <%= show_tags(post) %> </small>
+                <br>
+            <% end %>
+
             <small><%= time_ago_in_words post.created_at %> atrás</small>
             <p><small>Por: <%= post.user.name %></small></p>
 

@@ -21,6 +21,11 @@
     <%= form.text_area :body, class: 'form-control mt-1', rows: '8' %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :tag_list, "Tags (separar por vírgulas)" %>
+    <%= form.text_field :tag_list, class: 'form-control mt-1' %>
+  </div>
+
   <div class="submit-post mt-3">
     <%= form.submit class: 'btn btn-primary' %>
   </div>

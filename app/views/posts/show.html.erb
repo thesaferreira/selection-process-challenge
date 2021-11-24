@@ -6,6 +6,11 @@
         <h1 class="mb-4 post-main-title"> <%= @post.title %> </h1>
         <p class="mb-5">
           <em>Por: <%= @post.user.name %> </em>
+          
+          <% if @post.tags.exists? %>
+            <br>
+            <small> tags: <%= show_tags(@post) %> </small>
+          <% end %>
         </p>
         <p> <%= @post.body %> </p>
 

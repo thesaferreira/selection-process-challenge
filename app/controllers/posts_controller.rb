@@ -3,10 +3,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[ index show ]
 
   def index
-    @pagy, @posts = pagy(Post.all.order(created_at: :desc))
+    params[:tag] ? @posts = Post.tagged_with(params[:tag]) : @posts = Post.all
+    @pagy, @posts = pagy(@posts.order(created_at: :desc))
   end
 
   def show
+    @post = Post.find(params[:id])
     @comment = Comment.new
   end
 
@@ -53,6 +55,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :tag_list, :tag, { tag_ids: [] }, :tags_ids)
   end
 end
