@@ -46,3 +46,5 @@ gem "pagy", "~> 5.5"
 gem "rails-i18n", "~> 6.0"
 
 gem "devise-i18n", "~> 1.10"
+
+gem "nokogiri", "~> 1.12"

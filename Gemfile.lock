@@ -264,6 +264,7 @@ DEPENDENCIES
   devise-i18n (~> 1.10)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  nokogiri (~> 1.12)
   pagy (~> 5.5)
   pg (~> 1.1)
   puma (~> 5.0)

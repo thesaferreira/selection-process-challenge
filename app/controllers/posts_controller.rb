@@ -48,6 +48,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def import
+    posts_file = File.open(params[:file])
+    posts_data = helpers.sanitize posts_file.read, tags: %w(article h1 main em)
+    parsed_data = Nokogiri::HTML5(posts_data)
+
+    posts = parsed_data.search('article').map do |p|
+      title = p.search('h1').text
+      body = p.search('main').text
+      tag_list = p.search('em').text
+
+      @post = Post.new(title: title, body: body, tag_list: tag_list, user: current_user)
+      @post.save!
+    end
+
+    redirect_to posts_path, notice: "Posts adicionados com sucesso"
+  end
+
   private
 
   def set_post

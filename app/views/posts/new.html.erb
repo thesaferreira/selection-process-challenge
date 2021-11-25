@@ -6,3 +6,10 @@
         <%= render 'form', post: @post %>
     </div>
 </div>
+
+
+<h3>Importar Posts</h3>
+<%= form_tag import_posts_path, multipart: true do %>
+    <%= file_field_tag :file, accept: 'text/txt' %>
+    <%= submit_tag "Upload"%>
+<% end %>
