@@ -84,4 +84,6 @@ Rails.application.configure do
     :port => Rails.application.credentials.mailtrap[:port],
     :authentication => :cram_md5
   }
+
+  config.active_job.queue_adapter = :sidekiq
 end
