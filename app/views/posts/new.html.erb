@@ -8,8 +8,51 @@
 </div>
 
 
-<h3>Importar Posts</h3>
-<%= form_tag import_posts_path, multipart: true do %>
-    <%= file_field_tag :file, accept: 'text/txt' %>
-    <%= submit_tag "Upload"%>
-<% end %>
+<div class="container">
+<div class="row my-5 d-flex justify-content-center">
+    <h2 class="h4">Se preferir, importe um arquivo com formato <strong>.txt</strong> com um ou mais posts:</h2>
+    <p>Padrão:<br>
+    Todo post deve estar entre as tags &lt;article&gt;
+    <br>Dentro de cada post, o título deve estar entre as tags &lt;h1&gt;,
+    o corpo entre &lt;main&gt; e as tags (separadas por vírgulas) entre &lt;em&gt;.
+
+    <p>Exemplo:</p>
+    <div class="post-code bg-dark text-light mb-3 rounded">
+        <small>
+            &lt;<span class="text-info">article</span>&gt;<br>
+                &nbsp; &lt;<span class="text-warning">h1</span>&gt;
+                    Este é o título do primeiro post
+                &lt;/<span class="text-warning">h1</span>&gt;<br>
+
+                &nbsp; &lt;<span class="text-warning">main</span>&gt;
+                    Este é o corpo do primeiro post (...)
+                &lt;/<span class="text-warning">main</span>&gt;
+                    <br>
+                &nbsp; &lt;<span class="text-warning">em</span>&gt;
+                    uma tag, outra tag
+                &lt;/<span class="text-warning">em</span>&gt;<br>
+            &lt;/<span class="text-info">article</span>&gt;<br><br>
+                    
+            &lt;<span class="text-info">article</span>&gt;<br>
+                &nbsp; &lt;<span class="text-warning">h1</span>&gt;
+                    Este é o título do segundo post
+                &lt;/<span class="text-warning">h1</span>&gt;<br>
+
+                &nbsp; &lt;<span class="text-warning">main</span>&gt;
+                    Este é o corpo do segundo post (...)
+                &lt;/<span class="text-warning">main</span>&gt;
+                    <br>
+                &nbsp; &lt;<span class="text-warning">em</span>&gt;
+                    uma tag, outra tag
+                &lt;/<span class="text-warning">em</span>&gt;<br>
+            &lt;/<span class="text-info">article</span>&gt;<br><br>
+        </small>
+    </div>
+
+    <%= form_tag import_posts_path, multipart: true do %>
+        <%= file_field_tag :file, accept: 'text/txt', class: 'form-control' %>
+        <%= submit_tag 'Enviar', class: 'btn btn-light mt-2' %>
+    <% end %>
+
+</div>
+</div>
