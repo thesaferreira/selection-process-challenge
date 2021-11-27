@@ -1,7 +1,6 @@
 <div class="container posts">
   <div class="row">
-  <p id="notice"><%= notice %></p>
-    <div class="col-12 text-center">
+    <div class="col-12 text-center mt-4">
       <% @posts.each do |post| %>
           <div class="post-container shadow-sm mb-4 py-4 rounded">
             <h2 class="post-title" onclick="location.href='<%= post_path(post) %>'">
