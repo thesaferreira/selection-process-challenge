@@ -6,6 +6,8 @@ class Post < ApplicationRecord
     has_many :taggings, dependent: :destroy
     has_many :tags, through: :taggings
 
+    has_rich_text :body
+
     def self.tagged_with(name)
         Tag.find_by!(name: name).posts
     end

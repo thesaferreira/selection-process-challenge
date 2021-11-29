@@ -11,7 +11,7 @@
             <small> tags: <%= show_tags(@post) %> </small>
           <% end %>
         </p>
-        <p> <%= @post.body %> </p>
+        <p class="trix-content"> <%= @post.body %> </p>
 
         <% if @post.user == current_user %>
           <%= link_to 'Edit', edit_post_path(@post), class: 'standard-link' %>

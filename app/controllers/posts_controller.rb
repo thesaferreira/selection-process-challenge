@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params.merge(user: current_user))
-
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: "Post criado com sucesso." }
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
 
   def import
     posts_file = File.open(params[:file])
-    post = helpers.sanitize posts_file.read, tags: %w(article h1 main em)
+    post = helpers.sanitize posts_file.read, tags: %w(article h1 main em b i a)
     AddImportedPostWorker.perform_async(post, current_user.id)
     redirect_to posts_path, notice: "Os posts estão sendo processados e em breve serão adicionados!"
   end
