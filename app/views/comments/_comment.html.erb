@@ -1,11 +1,18 @@
 <div class="comment">
     <section class="comment-body">
-        <div>
-            <strong><%= comment.user.blank? ? 'Anônimo' : comment.user.name %></strong>
-            <p>
-                <%= comment.body %> <br>
-                <em><%= time_ago_in_words(comment.created_at) %> atrás</em>
-            </p>   
+        <div class="card p-3 my-3">
+            <div class="card-body">
+                <div class="card-title">
+                    <strong class="card-title"><%= comment.user.blank? ? 'Anônimo' : comment.user.name %></strong>
+                </div>
+            
+                <div class="card-text">
+                    <%= comment.body %> 
+                </div>
+                <div class="card-subtitle text-muted mt-2">
+                    <em><%= time_ago_in_words(comment.created_at) %> atrás</em>
+                </div>
+            </div>
         </div>
     </section>
 </div>
