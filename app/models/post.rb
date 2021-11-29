@@ -1,8 +1,11 @@
 class Post < ApplicationRecord
+    extend FriendlyId
+    friendly_id :title, use: :slugged
+
     validates :title, :body, presence: true
+
     belongs_to :user
     has_many :comments, dependent: :destroy
-
     has_many :taggings, dependent: :destroy
     has_many :tags, through: :taggings
 

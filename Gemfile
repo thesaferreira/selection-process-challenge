@@ -50,3 +50,5 @@ gem "devise-i18n", "~> 1.10"
 gem "nokogiri", "~> 1.12"
 
 gem "sidekiq", "~> 6.3"
+
+gem "friendly_id", "~> 5.4", require: true
