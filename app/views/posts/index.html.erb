@@ -6,7 +6,7 @@
             <h2 class="post-title" onclick="location.href='<%= post_path(post) %>'">
               <%= post.title %>
             </h2>
-            <p><%= post.body.to_plain_text.first(50) %>...</p>
+            <p><%= post.body.to_plain_text.first(100) %>...</p>
 
             <% if post.tags.exists? %>
                 <small> tags: <%= show_tags(post) %> </small>

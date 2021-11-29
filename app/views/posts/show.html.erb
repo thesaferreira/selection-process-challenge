@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 text-center mt-4">
-      <div class="post-container p-5 m-5 rounded">
+      <div class="post-container py-5 px-3 my-5 rounded">
         <h1 class="mb-4 post-main-title"> <%= @post.title %> </h1>
         <p class="mb-5">
           <em>Por: <%= @post.user.name %> </em>
@@ -26,6 +26,7 @@
   <div class="row">
     <section class="comments py-4" data-post-id="<%= @post.id %>">
       <% if @post.comments.any? %>
+        <h3>Comentários</h3>
         <%= render @post.comments.order(created_at: :desc) %>
       <% else %>
         Nenhum comentário a ser mostrado
@@ -35,7 +36,7 @@
         <%= form.hidden_field :post_id, value: @post.id %>
 
         <div class="form-group py-2">
-          <%= form.text_area :body, placeholder: 'Comentário', required: true, class: 'form-control' %>
+          <%= form.text_area :body, placeholder: 'Comentário', required: true, class: 'form-control', rows: '6' %>
         </div>
 
         <div class="actions py-2">
