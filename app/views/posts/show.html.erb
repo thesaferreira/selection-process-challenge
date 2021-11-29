@@ -14,10 +14,36 @@
         <p class="trix-content"> <%= @post.body %> </p>
 
         <% if @post.user == current_user %>
-          <%= link_to 'Edit', edit_post_path(@post), class: 'standard-link' %>
+          <%= link_to 'Editar', edit_post_path(@post), class: 'standard-link' %>
           <br>
-          <%= link_to 'Remover', @post, method: :delete,
-              data: { confirm: 'Are you sure?' }, class: 'delete-post-link' %>
+          
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removePostModal">
+            Remover
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="removePostModal" tabindex="-1" aria-labelledby="removePostModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="removePostModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Atenção! Esta é uma versão irreversível.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-danger">
+                    <%= link_to 'Remover', @post, method: :delete, class: 'text-white' %>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         <% end %>
       </div>
     </div>
